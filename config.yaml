@@ -1,0 +1,8 @@
+fields:
+  site:
+    name: Office of the University Secretary
+
+unm:
+  block_unknown_netids: true
+usermenu:
+  guest_signin: false

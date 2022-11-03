@@ -1,0 +1,17 @@
+#header {
+    >#header__wrapper {
+        background: #eee !important;
+        background: rgba(245, 245, 245, 0.8) !important;
+        border-top: 1px solid #fff !important;
+
+        h1 {
+            padding: 0 $grid !important;
+        }
+
+        img {
+            width: 500px;
+            max-width: 100%;
+            display: block;
+        }
+    }
+}
