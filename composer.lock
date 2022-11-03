@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bd4ca4784aa0764c6040b45652882651",
+    "content-hash": "506e924e5f8e71cfba473eb29558b9cd",
     "packages": [
         {
             "name": "byjoby/flatrr",
@@ -347,12 +347,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/digraph-cms/digraph-core.git",
-                "reference": "2cbba4881f5c786a4f975a4c6d8c184997f3d35c"
+                "reference": "804ad5314a5a8ea7d9622604faf07213dc87fb66"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digraph-cms/digraph-core/zipball/2cbba4881f5c786a4f975a4c6d8c184997f3d35c",
-                "reference": "2cbba4881f5c786a4f975a4c6d8c184997f3d35c",
+                "url": "https://api.github.com/repos/digraph-cms/digraph-core/zipball/804ad5314a5a8ea7d9622604faf07213dc87fb66",
+                "reference": "804ad5314a5a8ea7d9622604faf07213dc87fb66",
                 "shasum": ""
             },
             "require": {
@@ -424,7 +424,7 @@
                 "issues": "https://github.com/digraph-cms/digraph-core/issues",
                 "source": "https://github.com/digraph-cms/digraph-core/tree/v2"
             },
-            "time": "2022-11-02T14:05:40+00:00"
+            "time": "2022-11-03T16:04:16+00:00"
         },
         {
             "name": "donatj/phpuseragentparser",
