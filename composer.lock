@@ -347,12 +347,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/digraph-cms/digraph-core.git",
-                "reference": "c5565645b5b66395e2102e8c6ee0a513ead1c19a"
+                "reference": "3a26dab8c17cb4cc9cb90dff86864d423bf5de30"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digraph-cms/digraph-core/zipball/c5565645b5b66395e2102e8c6ee0a513ead1c19a",
-                "reference": "c5565645b5b66395e2102e8c6ee0a513ead1c19a",
+                "url": "https://api.github.com/repos/digraph-cms/digraph-core/zipball/3a26dab8c17cb4cc9cb90dff86864d423bf5de30",
+                "reference": "3a26dab8c17cb4cc9cb90dff86864d423bf5de30",
                 "shasum": ""
             },
             "require": {
@@ -364,6 +364,7 @@
                 "ext-mbstring": "*",
                 "ext-xml": "*",
                 "ext-zip": "*",
+                "ezyang/htmlpurifier": "^4.16",
                 "fpdo/fluentpdo": "2.2.0 - 2.2.2||^2.2.4",
                 "html2text/html2text": "^4.3",
                 "ksubileau/color-thief-php": "^1.4",
@@ -424,7 +425,7 @@
                 "issues": "https://github.com/digraph-cms/digraph-core/issues",
                 "source": "https://github.com/digraph-cms/digraph-core/tree/v2"
             },
-            "time": "2022-11-09T20:55:41+00:00"
+            "time": "2022-11-17T19:19:43+00:00"
         },
         {
             "name": "donatj/phpuseragentparser",
