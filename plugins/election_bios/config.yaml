@@ -1,0 +1,3 @@
+page_types:
+  election-bio: \DigraphCMS_Plugins\unmous\election_bios\ElectionBio
+  election-bio-list: \DigraphCMS_Plugins\unmous\election_bios\ElectionBioList
