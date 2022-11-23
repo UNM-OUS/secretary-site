@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "506e924e5f8e71cfba473eb29558b9cd",
+    "content-hash": "7b2f21c22f6b840d78c9c08d272ff8cb",
     "packages": [
         {
             "name": "byjoby/flatrr",
@@ -347,12 +347,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/digraph-cms/digraph-core.git",
-                "reference": "e771f3eb8a9fc6ad25e92acf25e8f764226f8b69"
+                "reference": "698c2c525cf1bebf2dd2b937fb79089b72aebbda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digraph-cms/digraph-core/zipball/e771f3eb8a9fc6ad25e92acf25e8f764226f8b69",
-                "reference": "e771f3eb8a9fc6ad25e92acf25e8f764226f8b69",
+                "url": "https://api.github.com/repos/digraph-cms/digraph-core/zipball/698c2c525cf1bebf2dd2b937fb79089b72aebbda",
+                "reference": "698c2c525cf1bebf2dd2b937fb79089b72aebbda",
                 "shasum": ""
             },
             "require": {
@@ -425,7 +425,7 @@
                 "issues": "https://github.com/digraph-cms/digraph-core/issues",
                 "source": "https://github.com/digraph-cms/digraph-core/tree/v2"
             },
-            "time": "2022-11-18T16:40:48+00:00"
+            "time": "2022-11-23T17:31:24+00:00"
         },
         {
             "name": "donatj/phpuseragentparser",
@@ -4176,20 +4176,24 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/UNM-OUS/ous_digraph_module.git",
-                "reference": "6e30d72fe59eb9543fbad272f4b78606b939040f"
+                "reference": "8bdef68534f04c19ba8b95723e8543526625d1fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UNM-OUS/ous_digraph_module/zipball/6e30d72fe59eb9543fbad272f4b78606b939040f",
-                "reference": "6e30d72fe59eb9543fbad272f4b78606b939040f",
+                "url": "https://api.github.com/repos/UNM-OUS/ous_digraph_module/zipball/8bdef68534f04c19ba8b95723e8543526625d1fe",
+                "reference": "8bdef68534f04c19ba8b95723e8543526625d1fe",
                 "shasum": ""
             },
             "require": {
                 "jasig/phpcas": "^1.3"
             },
             "require-dev": {
-                "digraphcms/digraph-core": "^2"
+                "digraphcms/digraph-core": "^2",
+                "php": ">=7.4",
+                "phpstan/phpstan": "^1.9",
+                "phpunit/phpunit": "^9.5"
             },
+            "default-branch": true,
             "type": "digraph-plugin",
             "autoload": {
                 "psr-4": {
@@ -4200,10 +4204,70 @@
                 "source": "https://github.com/UNM-OUS/ous_digraph_module/tree/v2",
                 "issues": "https://github.com/UNM-OUS/ous_digraph_module/issues"
             },
-            "time": "2022-11-14T18:37:59+00:00"
+            "time": "2022-11-22T18:06:35+00:00"
         }
     ],
-    "packages-dev": [],
+    "packages-dev": [
+        {
+            "name": "phpstan/phpstan",
+            "version": "1.9.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpstan/phpstan.git",
+                "reference": "d6fdf01c53978b6429f1393ba4afeca39cc68afa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/d6fdf01c53978b6429f1393ba4afeca39cc68afa",
+                "reference": "d6fdf01c53978b6429f1393ba4afeca39cc68afa",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2|^8.0"
+            },
+            "conflict": {
+                "phpstan/phpstan-shim": "*"
+            },
+            "bin": [
+                "phpstan",
+                "phpstan.phar"
+            ],
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHPStan - PHP Static Analysis Tool",
+            "keywords": [
+                "dev",
+                "static analysis"
+            ],
+            "support": {
+                "issues": "https://github.com/phpstan/phpstan/issues",
+                "source": "https://github.com/phpstan/phpstan/tree/1.9.2"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/ondrejmirtes",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/phpstan",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/phpstan/phpstan",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-11-10T09:56:11+00:00"
+        }
+    ],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": [],

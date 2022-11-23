@@ -27,5 +27,8 @@
         "server": [
             "php -S localhost:8000 -t web web/index-dev.php"
         ]
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^1.9"
     }
 }
