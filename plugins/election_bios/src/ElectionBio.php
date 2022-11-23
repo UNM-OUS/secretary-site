@@ -30,11 +30,11 @@ class ElectionBio extends AbstractPage
 
     public function statement(): string
     {
-        return SafeBBCode::parse($this['statement']);
+        return $this['statement'] ? SafeBBCode::parse($this['statement']) : '';
     }
 
     public function bio(): string
     {
-        return SafeBBCode::parse($this['bio']);
+        return $this['bio'] ? SafeBBCode::parse($this['bio']) : '';
     }
 }

@@ -11,7 +11,7 @@ $list = Context::page();
 
 printf('<h1>%s</h1>', $list->name());
 
-echo SafeBBCode::parse($list['body']);
+if ($list['body']) echo SafeBBCode::parse($list['body']);
 
 $table = new PaginatedTable(
     $list->bios(),
