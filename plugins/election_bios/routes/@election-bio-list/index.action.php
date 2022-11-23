@@ -17,8 +17,15 @@ $table = new PaginatedTable(
     $list->bios(),
     function (ElectionBio $bio): array {
         return [
-            $bio->url()->name(),
-            $bio['title']
+            sprintf(
+                '<a href="%s" style="display:block;"><strong>%s</strong><small><br>%s</small></a>',
+                $bio->url(),
+                $bio->name(),
+                $bio->jobTitle()
+            ),
+            ($p = $bio->portrait())
+                ? sprintf('<img src="%s" />', $p->crop(50, 50)->url())
+                : ''
         ];
     }
 );

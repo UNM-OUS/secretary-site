@@ -14,7 +14,7 @@ class ElectionBioSelect extends PageSelect
     public function __construct()
     {
         parent::__construct(DB::query()->from('page'));
-        $this->where('class', ElectionBioList::class());
+        $this->where('class', 'election-bio');
         $this->order('${data.lastname} ASC');
         $this->order('${data.firstname} ASC');
     }

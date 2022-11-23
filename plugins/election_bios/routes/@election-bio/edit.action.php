@@ -21,22 +21,8 @@ use DigraphCMS_Plugins\unmous\election_bios\ElectionBioSelect;
 use DigraphCMS_Plugins\unmous\ous_digraph_module\Forms\EmailOrNetIDInput;
 use DigraphCMS_Plugins\unmous\ous_digraph_module\PersonInfo;
 
-// First prompt for person's NetID or email, so we can look up their last entry
-/** @var string|null */
-$for = Context::arg('for');
-if (!$for) {
-    $form = new FormWrapper();
-    $form->button()->setText('Begin entering bio');
-    $forField = (new Field('NetID or email', new EmailOrNetIDInput))
-        ->addTip('This will be used to attempt to look up the last-entered information about this person and pre-fill the form with it.')
-        ->setRequired(true)
-        ->addForm($form);
-    if ($form->ready()) {
-        throw new RedirectException(new URL('?for=' . $forField->value()));
-    }
-    echo $form;
-    return;
-}
+/** @var ElectionBio */
+$page = Context::page();
 
 // Input form for basic info about person
 $form = new FormWrapper();
@@ -60,29 +46,16 @@ $statement = (new SafeBBCodeField('Statement of interest'))
     ->addForm($form);
 
 // load form defaults
-if ($person = PersonInfo::fetch($for)) {
-    $firstName->setDefault($person->firstName());
-    $lastName->setDefault($person->lastName());
-    $title->setDefault(implode(', ', array_filter([
-        $person['affiliation.title'] ? $person['affiliation.title'] : false,
-        $person['affiliation.department'] ? $person['affiliation.department'] : false,
-        $person['affiliation.org'] ? $person['affiliation.org'] : false
-    ])));
-}
-$previous = (new ElectionBioSelect)
-    ->where('${data.for}', $for)
-    ->order('created desc')
-    ->fetch();
-if ($previous) {
-    $firstName->setDefault($previous['firstname']);
-    $lastName->setDefault($previous['lastname']);
-    $title->setDefault($previous['title']);
-    $bio->setDefault($previous['bio']);
-    $statement->setDefault($previous['statement']);
+if ($page) {
+    $firstName->setDefault($page['firstname']);
+    $lastName->setDefault($page['lastname']);
+    $title->setDefault($page['title']);
+    $bio->setDefault($page['bio']);
+    $statement->setDefault($page['statement']);
 }
 
 // Display for picking images
-$media_uuid = 'election-bio__' . $for;
+$media_uuid = 'election-bio__' . $page['for'];
 $portraitInput = (new INPUT())->setAttribute('type', 'hidden')->setDefault('none');
 $imageInterface = (new Field('Portrait', $portraitInput))
     ->setRequired(true)
@@ -95,8 +68,8 @@ $form->addChild($imageInterface);
 // display currently-chosen portrait if selected, or previously-chosen portrait if possible
 if (Context::arg('portrait')) {
     $portrait = Filestore::get(Context::arg('portrait'));
-} elseif ($previous) {
-    $portrait = Filestore::get($previous['portrait']);
+} elseif ($page['portrait']) {
+    $portrait = Filestore::get($page['portrait']);
 } else {
     $portrait = null;
 }
@@ -145,16 +118,14 @@ if (!$portrait) {
 
 // handle/display main form
 if ($form->ready()) {
-    $page = new ElectionBio;
     $page['firstname'] = strip_tags($firstName->value());
     $page['lastname'] = strip_tags($lastName->value());
     $page['title'] = strip_tags($title->value());
     $page['bio'] = $bio->value();
     $page['statement'] = $statement->value();
-    $page['for'] = $for;
     if ($portraitInput->value() != 'none') $page['portrait'] = $portraitInput->value();
     $page->name(implode(' ', [$page['firstname'], $page['lastname']]));
-    $page->insert(Context::pageUUID());
+    $page->update();
     throw new RedirectException($page->url());
 }
 
