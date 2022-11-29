@@ -17,7 +17,6 @@ jobs:
           memory_limit: 1G
           args: --memory-limit 1G
   build-and-deploy:
-    needs: [test-and-analyze]
     runs-on: ubuntu-latest
     environment: test
     steps:
