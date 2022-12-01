@@ -53,14 +53,13 @@ jobs:
             rm -rf cache/*
             rm -rf web/files/*
       - name: Deploy
-        uses: easingthemes/ssh-deploy@main
         env:
-          ARGS: -crlpEtzi --delete
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ secrets.REMOTE_PATH }}/test
-          EXCLUDE: /.maintenance, /.htaccess, /env.yaml, /.git/, /.github/, /storage/, /web/files/, /web/index-dev.php
+          EXCLUDE: /.maintenance, /.htaccess, /env.yaml, /.git/, /.github/, /.vscode/, /storage/, /web/files/, /web/index-dev.php
+        run: |
+          rsync -rRupEtSmzvc --delete -e 'ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa' --exclude="$EXCLUDE" ./* $REMOTE_USER@$REMOTE_HOST:$TARGET/
       - name: Copy production database
         uses: appleboy/ssh-action@master
         with:

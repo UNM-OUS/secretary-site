@@ -86,14 +86,13 @@ jobs:
             find web/files -mtime +365 -delete
             find web/files -type d -empty -delete
       - name: Deploy
-        uses: easingthemes/ssh-deploy@main
         env:
-          ARGS: -crlpEtzi --delete
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ secrets.REMOTE_PATH }}/prod
-          EXCLUDE: /.maintenance, /.htaccess, /env.yaml, /.git/, /.github/, /storage/, /web/known_netids.yaml, /web/groups/, /web/AuthGroups/, /web/files/, /web/index-dev.php
+          EXCLUDE: /.maintenance, /.htaccess, /env.yaml, /.git/, /.github/, /.vscode/, /storage/, /web/files/, /web/index-dev.php
+        run: |
+          rsync -rRupEtSmzvc --delete -e 'ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa' --exclude="$EXCLUDE" ./* $REMOTE_USER@$REMOTE_HOST:$TARGET/
       - name: Database migrations
         uses: appleboy/ssh-action@master
         with:
