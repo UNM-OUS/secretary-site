@@ -55,7 +55,7 @@ class SharedPermissions extends AbstractPlugin
     public function onStaticUrlPermissions_groups(URL $url, User $user): ?bool
     {
         if ($url->action() == 'index.php') return true;
-        else null;
+        else return null;
     }
 
     public function onUserMenu_user(UserMenu $menu)
