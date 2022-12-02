@@ -1,0 +1,6 @@
+unm:
+  shared_permissions:
+    groups:
+      admins: Admins
+      editors: Editors
+      officeStaff: officeStaff (only used on old sites)
