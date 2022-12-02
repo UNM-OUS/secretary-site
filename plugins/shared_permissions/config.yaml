@@ -3,4 +3,3 @@ unm:
     groups:
       admins: Admins
       editors: Editors
-      officeStaff: officeStaff (only used on old sites)

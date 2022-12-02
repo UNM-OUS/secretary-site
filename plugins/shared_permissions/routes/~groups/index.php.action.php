@@ -23,5 +23,10 @@ if (in_array('admin', $groups) && !in_array('editor', $groups)) {
     $groups[] = 'editor';
 }
 
+// add officeStaff group if person is an editor, also a legacy thing
+if (in_array('editor', $groups)) {
+    $groups[] = 'officeStaff';
+}
+
 Context::response()->filename('groups.json');
 echo json_encode($groups);
