@@ -10,9 +10,6 @@ foreach (SharedPermissions::allNetids() as $netid) {
     $known_netids[$netid] = [
         'groups' => SharedPermissions::groups($netid)
     ];
-    if ($name = PersonInfo::getFullNameFor($netid)) {
-        $known_netids[$netid]['name'] = $name;
-    }
 }
 
 ksort($known_netids);

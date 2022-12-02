@@ -4181,12 +4181,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/UNM-OUS/ous_digraph_module.git",
-                "reference": "31916e96627fc8edba05d350a729b06b2b23b4b9"
+                "reference": "095271c7a3dfa1c68cc69a876c2037b06a030f37"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UNM-OUS/ous_digraph_module/zipball/31916e96627fc8edba05d350a729b06b2b23b4b9",
-                "reference": "31916e96627fc8edba05d350a729b06b2b23b4b9",
+                "url": "https://api.github.com/repos/UNM-OUS/ous_digraph_module/zipball/095271c7a3dfa1c68cc69a876c2037b06a030f37",
+                "reference": "095271c7a3dfa1c68cc69a876c2037b06a030f37",
                 "shasum": ""
             },
             "require": {
@@ -4209,7 +4209,7 @@
                 "source": "https://github.com/UNM-OUS/ous_digraph_module/tree/v2",
                 "issues": "https://github.com/UNM-OUS/ous_digraph_module/issues"
             },
-            "time": "2022-11-29T17:50:54+00:00"
+            "time": "2022-12-02T19:25:21+00:00"
         }
     ],
     "packages-dev": [
