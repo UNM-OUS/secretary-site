@@ -10,13 +10,18 @@ else $groups = [];
 
 // correct names of standard groups for legacy systems
 $groups = array_map(
-    function(string $group) {
+    function (string $group) {
         if ($group == 'admins') return 'admin';
-        elseif($group == 'editors') return 'editor';
+        elseif ($group == 'editors') return 'editor';
         else return $group;
     },
     $groups
 );
+
+// add editor if admin is present, also for legacy systems
+if (in_array('admin', $groups) && !in_array('editor', $groups)) {
+    $groups[] = 'editor';
+}
 
 Context::response()->filename('groups.json');
 echo json_encode($groups);
