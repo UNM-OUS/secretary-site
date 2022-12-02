@@ -57,7 +57,7 @@ jobs:
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ secrets.REMOTE_PATH }}/test
-          EXCLUDE: /.maintenance, /.htaccess, /env.yaml, /.git/, /.github/, /.vscode/, /storage/, /web/files/, /web/index-dev.php
+          EXCLUDE: /.maintenance, /.htaccess, /env.yaml, /.git/, /.github/, /.vscode/, /storage/, /web/*/*, /web/index-dev.php
         run: |
           rsync -rRupEtSmzvc --delete -e 'ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa' --exclude="$EXCLUDE" ./* $REMOTE_USER@$REMOTE_HOST:$TARGET/
       - name: Copy production database
