@@ -62,17 +62,7 @@ jobs:
           script: |
             cd ${{ secrets.REMOTE_PATH }}
             zip -ruq ../_backup/${PWD##*/}/`date +%Y%m%d_%H%M%S`.zip prod/storage
-      - name: Clear cache
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.REMOTE_HOST }}
-          username: ${{ secrets.REMOTE_USER }}
-          key: ${{ secrets.SSH_KEY}}
-          script_stop: true
-          script: |
-            cd ${{ secrets.REMOTE_PATH }}/prod
-            rm -rf cache/*
-      - name: Clear all CSS/JS files and old files/cache
+      - name: Clear all CSS/JS files and old files
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.REMOTE_HOST }}
@@ -89,10 +79,9 @@ jobs:
         env:
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          TARGET: ${{ secrets.REMOTE_PATH }}/prod
-          EXCLUDE: /.maintenance, /.htaccess, /env.yaml, /.git/, /.github/, /.vscode/, /storage/, /web/*/*, /web/index-dev.php
+          TARGET: ${{ secrets.REMOTE_PATH }}/test/
         run: |
-          rsync -rRupEtSmzvc --delete -e 'ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa' --exclude="$EXCLUDE" ./* $REMOTE_USER@$REMOTE_HOST:$TARGET/
+          rsync -rRupEtSmzvc --delete -e 'ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa' --exclude-from=.deployignore-prod ./ $REMOTE_USER@$REMOTE_HOST:$TARGET
       - name: Database migrations
         uses: appleboy/ssh-action@master
         with:

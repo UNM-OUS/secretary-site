@@ -1,7 +1,6 @@
 <?php
 
 use DigraphCMS\Context;
-use DigraphCMS_Plugins\unmous\ous_digraph_module\PersonInfo;
 use DigraphCMS_Plugins\unmous\shared_permissions\SharedPermissions;
 
 $known_netids = [];

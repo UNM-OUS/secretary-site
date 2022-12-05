@@ -1,0 +1,11 @@
+.git
+.github
+.gitignore
+.htaccess
+.deployignore-prod
+.deployignore-test
+.vscode
+env.yaml
+storage
+web/files
+web/index-dev.php
