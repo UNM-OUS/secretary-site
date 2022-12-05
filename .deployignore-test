@@ -5,6 +5,7 @@
 .deployignore-prod
 .deployignore-test
 .vscode
+.maintenance
 env.yaml
 storage
 web/index-dev.php
