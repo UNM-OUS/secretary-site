@@ -3,3 +3,5 @@ unm:
     groups:
       admins: Admins
       editors: Editors
+      bookstore: Bookstore
+      ucam: UCAM
