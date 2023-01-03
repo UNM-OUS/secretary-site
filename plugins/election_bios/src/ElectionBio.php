@@ -13,7 +13,7 @@ class ElectionBio extends AbstractPage
 
     public function parentPage(): ?ElectionBioList
     {
-        return parent::parentPage();
+        return parent::parentPage() instanceof ElectionBioList ? parent::parentPage() : null;
     }
 
     public function portrait(): ?ImageFile
