@@ -4,22 +4,15 @@
 use DigraphCMS\Content\Filestore;
 use DigraphCMS\Content\FilestoreFile;
 use DigraphCMS\Context;
-use DigraphCMS\HTML\DIV;
 use DigraphCMS\HTML\Forms\Field;
 use DigraphCMS\HTML\Forms\FormWrapper;
 use DigraphCMS\HTML\Forms\INPUT;
 use DigraphCMS\HTML\Forms\UploadSingle;
 use DigraphCMS\HTTP\RedirectException;
-use DigraphCMS\Media\ImageFile;
-use DigraphCMS\SafeContent\SafeBBCode;
 use DigraphCMS\SafeContent\SafeBBCodeField;
 use DigraphCMS\UI\Pagination\PaginatedSection;
 use DigraphCMS\URL\URL;
 use DigraphCMS_Plugins\unmous\election_bios\ElectionBio;
-use DigraphCMS_Plugins\unmous\election_bios\ElectionBios;
-use DigraphCMS_Plugins\unmous\election_bios\ElectionBioSelect;
-use DigraphCMS_Plugins\unmous\ous_digraph_module\Forms\EmailOrNetIDInput;
-use DigraphCMS_Plugins\unmous\ous_digraph_module\PersonInfo;
 
 /** @var ElectionBio */
 $page = Context::page();
@@ -46,13 +39,11 @@ $statement = (new SafeBBCodeField('Statement of interest'))
     ->addForm($form);
 
 // load form defaults
-if ($page) {
-    $firstName->setDefault($page['firstname']);
-    $lastName->setDefault($page['lastname']);
-    $title->setDefault($page['title']);
-    $bio->setDefault($page['bio']);
-    $statement->setDefault($page['statement']);
-}
+$firstName->setDefault($page['firstname']);
+$lastName->setDefault($page['lastname']);
+$title->setDefault($page['title']);
+$bio->setDefault($page['bio']);
+$statement->setDefault($page['statement']);
 
 // Display for picking images
 $media_uuid = 'election-bio__' . $page['for'];
