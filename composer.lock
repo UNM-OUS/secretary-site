@@ -52,7 +52,7 @@
         },
         {
             "name": "cakephp/core",
-            "version": "4.4.9",
+            "version": "4.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/core.git",
@@ -109,16 +109,16 @@
         },
         {
             "name": "cakephp/database",
-            "version": "4.4.9",
+            "version": "4.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/database.git",
-                "reference": "6a531dfaacfd783cc313fc258865dd021b9d4766"
+                "reference": "c12a8f30f802968a885774e2ac3c099f470bf07c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/database/zipball/6a531dfaacfd783cc313fc258865dd021b9d4766",
-                "reference": "6a531dfaacfd783cc313fc258865dd021b9d4766",
+                "url": "https://api.github.com/repos/cakephp/database/zipball/c12a8f30f802968a885774e2ac3c099f470bf07c",
+                "reference": "c12a8f30f802968a885774e2ac3c099f470bf07c",
                 "shasum": ""
             },
             "require": {
@@ -161,11 +161,11 @@
                 "issues": "https://github.com/cakephp/cakephp/issues",
                 "source": "https://github.com/cakephp/database"
             },
-            "time": "2022-12-15T10:14:32+00:00"
+            "time": "2023-01-03T20:29:38+00:00"
         },
         {
             "name": "cakephp/datasource",
-            "version": "4.4.9",
+            "version": "4.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/datasource.git",
@@ -223,7 +223,7 @@
         },
         {
             "name": "cakephp/utility",
-            "version": "4.4.9",
+            "version": "4.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/utility.git",
@@ -347,12 +347,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/digraph-cms/digraph-core.git",
-                "reference": "9872e027ea3d9dcfe6caadb135fc27fcbb8a1be5"
+                "reference": "69b880ad1a8f6c599c0254689d3b53a283e47d75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digraph-cms/digraph-core/zipball/9872e027ea3d9dcfe6caadb135fc27fcbb8a1be5",
-                "reference": "9872e027ea3d9dcfe6caadb135fc27fcbb8a1be5",
+                "url": "https://api.github.com/repos/digraph-cms/digraph-core/zipball/69b880ad1a8f6c599c0254689d3b53a283e47d75",
+                "reference": "69b880ad1a8f6c599c0254689d3b53a283e47d75",
                 "shasum": ""
             },
             "require": {
@@ -425,7 +425,7 @@
                 "issues": "https://github.com/digraph-cms/digraph-core/issues",
                 "source": "https://github.com/digraph-cms/digraph-core/tree/v2"
             },
-            "time": "2023-01-03T19:27:08+00:00"
+            "time": "2023-01-06T17:18:04+00:00"
         },
         {
             "name": "donatj/phpuseragentparser",
@@ -4183,12 +4183,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/UNM-OUS/ous_digraph_module.git",
-                "reference": "7f7bd5ed2937a9690e44e830f68d282408708279"
+                "reference": "4c4ca1def075ca787bea6796e9b1296893fce459"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UNM-OUS/ous_digraph_module/zipball/7f7bd5ed2937a9690e44e830f68d282408708279",
-                "reference": "7f7bd5ed2937a9690e44e830f68d282408708279",
+                "url": "https://api.github.com/repos/UNM-OUS/ous_digraph_module/zipball/4c4ca1def075ca787bea6796e9b1296893fce459",
+                "reference": "4c4ca1def075ca787bea6796e9b1296893fce459",
                 "shasum": ""
             },
             "require": {
@@ -4211,22 +4211,22 @@
                 "source": "https://github.com/UNM-OUS/ous_digraph_module/tree/v2",
                 "issues": "https://github.com/UNM-OUS/ous_digraph_module/issues"
             },
-            "time": "2022-12-20T18:26:26+00:00"
+            "time": "2023-01-05T17:13:45+00:00"
         }
     ],
     "packages-dev": [
         {
             "name": "phpstan/phpstan",
-            "version": "1.9.6",
+            "version": "1.9.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "ef38a25950e5d0e6c95eedf49d8a784272f8dc5e"
+                "reference": "0501435cd342eac7664bd62155b1ef907fc60b6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/ef38a25950e5d0e6c95eedf49d8a784272f8dc5e",
-                "reference": "ef38a25950e5d0e6c95eedf49d8a784272f8dc5e",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/0501435cd342eac7664bd62155b1ef907fc60b6f",
+                "reference": "0501435cd342eac7664bd62155b1ef907fc60b6f",
                 "shasum": ""
             },
             "require": {
@@ -4256,7 +4256,7 @@
             ],
             "support": {
                 "issues": "https://github.com/phpstan/phpstan/issues",
-                "source": "https://github.com/phpstan/phpstan/tree/1.9.6"
+                "source": "https://github.com/phpstan/phpstan/tree/1.9.7"
             },
             "funding": [
                 {
@@ -4272,7 +4272,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-01-03T13:40:32+00:00"
+            "time": "2023-01-04T21:59:57+00:00"
         }
     ],
     "aliases": [],
